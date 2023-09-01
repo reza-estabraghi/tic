@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section{
+            width: 500px;
+            height: 500px;
+            border: 5px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 100px auto;
+        }
+        section>div{
+            width: 33%;
+            height: 33%;
+            border: 1px solid grey;
+            font-size: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+        button{
+            position: fixed;
+            top: 80%;
+            left: 45%;
+            width: 100px;
+            height: 50px;
+            display: flex;
+            justify-content: center;align-items: center;
+            font-size: 30px;
+        }
+        h1{
+            margin-left: 40%;
+            margin-top: 3%;
+            font-size: 40px;
+            color: green;
+            text-transform: uppercase;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </section>
+    <button id="res">reset</button>
+</body>
+<script>
+    let _x = 'x'
+    let _o = 'o'
+    let click = 0
+    let _div = document.querySelectorAll('div')
+    _div.forEach((item,index)=>{
+        item.addEventListener('click',(e)=>{
+            if(
+                click == 0 &&
+                e.target.innerHTML == ''
+            ){
+                e.target.innerHTML= _x
+                click++
+            }
+            if(
+                click != 0 &&
+                e.target.innerHTML == ''
+            ){
+                e.target.innerHTML = _o
+                click--
+            }
+            playerX()
+            playerO()
+        })
+        
+    })
+    document.getElementById('res').addEventListener('click',(e)=>{
+        click = 0
+        _div.forEach((item)=>{
+            item.innerHTML=''
+        })
+    })
+    function playerX(){
+        if(
+            _div[0].innerHTML==_x && _div[1].innerHTML==_x && _div[2].innerHTML==_x
+        ){
+            document.getElementsByTagName('h1')[0].innerHTML='player x won'
+            click = 0
+            _div.forEach((item)=>{
+                item.addEventListener('click',(e)=>{
+                    e.target.innerHTML='click on reset'
+                })
+            })
+        }
+        if(
+            _div[0].innerHTML==_x && _div[3].innerHTML==_x && _div[6].innerHTML==_x
+        ){
+            document.getElementsByTagName('h1')[0].innerHTML='player x won'
+            click = 0
+            _div.forEach((item)=>{
+                item.addEventListener('click',(e)=>{
+                    e.target.innerHTML='click on reset'
+                })
+            })
+        }
+        if(
+            _div[1].innerHTML==_x && _div[4].innerHTML==_x && _div[7].innerHTML==_x
+        ){
+            document.getElementsByTagName('h1')[0].innerHTML='player x won'
+            click = 0
+            _div.forEach((item)=>{
+                item.addEventListener('click',(e)=>{
+                    e.target.innerHTML='click on reset'
+                })
+            })
+        }
+        if(
+            _div[2].innerHTML==_x && _div[5].innerHTML==_x && _div[8].innerHTML==_x
+        ){
+            document.getElementsByTagName('h1')[0].innerHTML='player x won'
+            click = 0
+            _div.forEach((item)=>{
+                item.addEventListener('click',(e)=>{
+                    e.target.innerHTML='click on reset'
+                })
+            })
+        }
+        if(
+            _div[3].innerHTML==_x && _div[4].innerHTML==_x && _div[5].innerHTML==_x
+        ){
+            document.getElementsByTagName('h1')[0].innerHTML='player x won'
+            click = 0
+            _div.forEach((item)=>{
+                item.addEventListener('click',(e)=>{
+                    e.target.innerHTML='click on reset'
+                })
+            })
+        }
+        if(
+            _div[6].innerHTML==_x && _div[7].innerHTML==_x && _div[8].innerHTML==_x
+        ){
+            document.getElementsByTagName('h1')[0].innerHTML='player x won'
+            click = 0
+            _div.forEach((item)=>{
+                item.addEventListener('click',(e)=>{
+                    e.target.innerHTML='click on reset'
+                })
+            })
+        }
+        if(
+            _div[0].innerHTML==_x && _div[4].innerHTML==_x && _div[8].innerHTML==_x
+        ){
+            document.getElementsByTagName('h1')[0].innerHTML='player x won'
+            click = 0
+            _div.forEach((item)=>{
+                item.addEventListener('click',(e)=>{
+                    e.target.innerHTML='click on reset'
+                })
+            })
+        }
+        if(
+            _div[2].innerHTML==_x && _div[4].innerHTML==_x && _div[6].innerHTML==_x
+        ){
+            document.getElementsByTagName('h1')[0].innerHTML='player x won'
+            click = 0
+            _div.forEach((item)=>{
+                item.addEventListener('click',(e)=>{
+                    e.target.innerHTML='click on reset'
+                })
+            })
+        }
+    }
+    function playerO(){
+        if(
+            _div[0].innerHTML==_o && _div[1].innerHTML==_o && _div[2].innerHTML==_o
+        ){
+            document.getElementsByTagName('h1')[0].innerHTML='player o won'
+            click = 1
+            _div.forEach((item)=>{
+                item.addEventListener('click',(e)=>{
+                    e.target.innerHTML='click on reset'
+                })
+            })
+        }
+        if(
+            _div[3].innerHTML==_o && _div[4].innerHTML==_o && _div[5].innerHTML==_o
+        ){
+            document.getElementsByTagName('h1')[0].innerHTML='player o won'
+            click = 1
+            _div.forEach((item)=>{
+                item.addEventListener('click',(e)=>{
+                    e.target.innerHTML='click on reset'
+                })
+            })
+        }
+        if(
+            _div[6].innerHTML==_o && _div[7].innerHTML==_o && _div[8].innerHTML==_o
+        ){
+            document.getElementsByTagName('h1')[0].innerHTML='player o won'
+            click = 1
+            _div.forEach((item)=>{
+                item.addEventListener('click',(e)=>{
+                    e.target.innerHTML='click on reset'
+                })
+            })
+        }
+        if(
+            _div[0].innerHTML==_o && _div[3].innerHTML==_o && _div[6].innerHTML==_o
+        ){
+            document.getElementsByTagName('h1')[0].innerHTML='player o won'
+            click = 1
+            _div.forEach((item)=>{
+                item.addEventListener('click',(e)=>{
+                    e.target.innerHTML='click on reset'
+                })
+            })
+        }
+        if(
+            _div[1].innerHTML==_o && _div[4].innerHTML==_o && _div[7].innerHTML==_o
+        ){
+            document.getElementsByTagName('h1')[0].innerHTML='player o won'
+            click = 1
+            _div.forEach((item)=>{
+                item.addEventListener('click',(e)=>{
+                    e.target.innerHTML='click on reset'
+                })
+            })
+        }
+        if(
+            _div[2].innerHTML==_o && _div[5].innerHTML==_o && _div[8].innerHTML==_o
+        ){
+            document.getElementsByTagName('h1')[0].innerHTML='player o won'
+            click = 1
+            _div.forEach((item)=>{
+                item.addEventListener('click',(e)=>{
+                    e.target.innerHTML='click on reset'
+                })
+            })
+        }
+        if(
+            _div[0].innerHTML==_o && _div[4].innerHTML==_o && _div[8].innerHTML==_o
+        ){
+            document.getElementsByTagName('h1')[0].innerHTML='player o won'
+            click = 1
+            _div.forEach((item)=>{
+                item.addEventListener('click',(e)=>{
+                    e.target.innerHTML='click on reset'
+                })
+            })
+        }
+        if(
+            _div[2].innerHTML==_o && _div[4].innerHTML==_o && _div[6].innerHTML==_o
+        ){
+            document.getElementsByTagName('h1')[0].innerHTML='player o won'
+            click = 1
+            _div.forEach((item)=>{
+                item.addEventListener('click',(e)=>{
+                    e.target.innerHTML='click on reset'
+                })
+            })
+        }
+    }
+</script>
+</html>
